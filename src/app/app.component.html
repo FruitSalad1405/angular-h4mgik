@@ -5,19 +5,26 @@
   45 + 35 ={{45+35}}<br/>
 </p>
 
-<div *ngFor = "let minum of minum; let i = index">
-  {{i + 1}}. {{minum.nama}} - {{minum.harga | currency : 'Rp'}}
-</div> <br/>
-
-<div *ngFor="let data of itemArr">
-  content = {{data}}
-</div> <br/>
-
-<p *ngIf="show">
-  Tampilkan isi
-</p>
-
 <p *ngIf = "user.name">
   username : {{user.name}}
 </p>
 
+<ng-template
+  *ngIf="show; then showBlock; else notShowBlock">
+</ng-template>
+
+<ng-template #showBlock>
+  <p>This is Show Block</p>  
+</ng-template>
+
+<ng-template #notShowBlock>
+  <p>This is NOT Show Block</p>  
+</ng-template>
+
+<p>
+  <input {{ngModel}} = "a"  type="text" /> *
+  <input {{ngModel}} = "b"  type="text" /> =
+  <br/>{{a+b}}
+</p>
+
+<button {click}="KlikButton()">Tekan<button>{{pesan}}

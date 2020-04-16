@@ -22,4 +22,5 @@ export class AppComponent  {
   user = {
     name: 'Fruit Salad'
   };
+
 }
